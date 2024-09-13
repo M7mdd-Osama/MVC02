@@ -1,0 +1,49 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+	@* Start header *@
+	<nav class="mt-5">
+		<center>
+			@*1. Html Tags *@
+			@*<a class="btn btn-primary" href="/Home/Index">Home</a>*@
+
+			@*2. Html Helpers  *@
+			@*@Html.ActionLink("Home","Index","Home",null,new{@class = "btn btn-primary"});*@
+
+			@* 3. TagHelpers *@
+			<a class="btn btn-primary" asp-controller="Home" asp-action="Index" >Home</a>
+
+
+			<a class="btn btn-secondary" asp-controller="Home" asp-action="AboutUs">AboutUs</a>
+			<a class="btn btn-success" asp-controller="Home" asp-action="Privacy">Privacy</a>
+			<a class="btn btn-warning" asp-controller="Home" asp-action="ContactUs">ContactUs</a>
+			<a class="btn btn-danger" asp-controller="Account" asp-action="Login">Login</a>
+			<a class="btn btn-info" asp-controller="Account" asp-action="Register">Register</a>
+		</center>
+	</nav>
+	@* End Header *@
+
+	<div>
+		@RenderBody()
+	</div>
+
+	@* Start Footer *@
+	<footer class="mt-5">
+		<center>
+			<div>
+				<p> CopyRights &copy; @DateTime.Now.Year </p>
+			</div>
+		</center>
+	</footer>
+	@* End Footer *@
+
+</body>
+</html>
